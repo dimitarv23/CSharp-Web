@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "ecdacebe-9098-41c9-9a7e-b6268047ab5a",
+		"name": "SoftUni HTTP - GitHub Issues",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27410548"
+	},
+	"item": [
+		{
+			"name": "Get Issues For Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Issue #1 For Repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comments For Issue #1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1/comments",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"1",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comment #1 For Issue #1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/1/comments/1",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"1",
+						"comments",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Issue For Repo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dimitarv23",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Missing [Submit] button\",\r\n  \"body\": \"I'm having a problem with this.\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Issue #4334 For Repo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dimitarv23",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Edited bug MissingButton\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/4334",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"4334"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Close Issue #4334 For Repo",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "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",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dimitarv23",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"state\": \"closed\"\r\n}"
+				},
+				"url": {
+					"raw": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/4334",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"repos",
+						"testnakov",
+						"test-nakov-repo",
+						"issues",
+						"4334"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
