@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = $"Product N.{Model.Id}";
+}
+
+<div class="card" style="width: 18rem;">
+    <div class="card-header">@ViewBag.Title</div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            N.@Model.Id: @Model.Name - @($"{Model.Price:f2}") lv.
+        </li>
+    </ul>
+</div>
