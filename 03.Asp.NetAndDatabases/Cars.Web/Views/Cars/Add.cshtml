@@ -1,0 +1,45 @@
+﻿@model AddCarViewModel
+@{
+    ViewData["Title"] = "Add New Car";
+}
+
+<div class="text-center mb-5">
+    <h2>@ViewData["Title"]</h2>
+    <hr />
+</div>
+<div class="container form-container">
+    <form method="post">
+        <div class="form-group mb-1">
+            <label for="make" class="form-label m-0">Make *</label>
+            <input type="text" asp-for="Make" id="make" class="form-control">
+        </div>
+        <div class="form-group mb-1">
+            <label for="model" class="form-label m-0">Model *</label>
+            <input type="text" asp-for="Model" id="model" class="form-control">
+        </div>
+        <div class="form-group mb-1">
+            <label for="type" class="form-label">Type</label>
+            <select asp-for="Type" id="type" class="form-control">
+                @foreach (var type in (eCarType[])Enum.GetValues(typeof(eCarType)))
+                {
+                    <option value="@type">@type.ToString()</option>
+                }
+            </select>
+        </div>
+        <div class="form-group mb-1">
+            @{
+                var currYear = DateTime.Now.Year;
+            }
+            <label for="year" class="form-label m-0">Year *</label>
+            <input type="number" asp-for="Year" min="1950" max="@currYear" id="year" class="form-control">
+        </div>
+        <div class="form-group mb-1">
+            <label for="year" class="form-label m-0">Engine Id *</label>
+            <input type="number" asp-for="EngineId" id="year" class="form-control">
+        </div>
+        <div class="d-flex justify-content-center mt-4 gap-4">
+            <a asp-controller="Cars" asp-action="All" class="btn btn-secondary col-3">Cancel</a>
+            <button type="submit" class="btn btn-primary col-3">Submit</button>
+        </div>
+    </form>
+</div>
